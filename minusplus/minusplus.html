@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+       
+        body{
+          margin: 0;
+          padding: 0;
+      }
+      .container{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(210, 202, 202);
+          transition: 2s ease-in-out !important;
+          animation-duration: 5s;
+      }
+      .toggle-icon,
+      .toggle-icon::before,
+      .toggle-icon::after{
+        content: "";
+        width: 180px;
+        height: 5px;
+        background-color: black;
+        position: fixed;
+        cursor: pointer;
+        transition: 2s ease-in-out;
+      }
+      .t1 {
+          transform: rotate(90deg);
+          animation-duration: 2s;
+      }
+      
+     
+
+     
+      .t1::before{
+          rotate: 90deg;
+          background-color: red;
+          transition: 1s ease-in-out;
+      }
+        .i1{
+          animation: key1 2s infinite alternate;
+          animation-iteration-count: 2;
+          animation-delay: 1.7s;
+        }
+        @keyframes key1 {
+            0%
+             {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-60deg);
+            }
+
+           
+
+        }
+        
+        .icon-content {
+          width: 184px;
+          height: 174px;
+          background-color: rgba(193, 194, 194, 0);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 2s;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-content">
+            <span class="toggle-icon"> </span>
+        </div>
+        
+    </div>
+    <script>
+
+ 
+      $(document).ready(function(){
+          $(".toggle-icon").click(function(){
+              $(this).toggleClass("t1");
+              $(".icon-content").toggleClass("i1");
+            
+          });
+      });
+      </script>
+</body>
+</html>
