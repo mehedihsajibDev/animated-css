@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Div</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div id="rotateDiv" style="width: 100px; height: 100px; background-color: red;"></div>
+</div>
+<script>
+    $(document).ready(function() {
+        var rotated = false;
+
+        // Handle click event on the div
+        $('#rotateDiv').click(function() {
+            // Toggle the rotated state
+            rotated = !rotated;
+
+            // Set the rotation based on the rotated state
+            var rotation = rotated ? '90deg' : '40deg';
+
+            // Apply the rotation using the css method
+            $(this).css('transform', 'rotate(' + rotation + ')');
+        });
+    });
+</script>
+
+</body>
+</html>
